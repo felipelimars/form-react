@@ -14,7 +14,6 @@ import { goToListPage } from "../../routes/coordinator";
 const Form: React.FC = () => {
   const formContext = useContext(UseFormContext);
   const navigate = useNavigate();
-
   const handleGoToListPage = () => {
     goToListPage(navigate);
   };

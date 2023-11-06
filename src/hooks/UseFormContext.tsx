@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
-import axios from "axios";
 import { FormContextType, Cadastro } from "../types/formContext";
+import axios from "axios";
 
 export const UseFormContext = createContext<FormContextType | undefined>(undefined);
 
@@ -20,12 +20,10 @@ const FormProvider = ({ children }: { children: ReactNode }) => {
   const checkCEP = () => {
     const cepDigits = cep.replace(/\D/g, "");
     if (cepDigits.length === 8) {
-      axios
-        .get(`https://viacep.com.br/ws/${cepDigits}/json/`)
+      axios.get(`http://localhost:3001/cep/${cepDigits}`)
         .then((response) => {
           const data = response.data;
   
-          // Verifica se a API retornou um erro
           if (!data.erro) {
             setLogradouro(data.logradouro);
             setBairro(data.bairro);
@@ -34,20 +32,24 @@ const FormProvider = ({ children }: { children: ReactNode }) => {
             setAutoCompleted(true);
             document.getElementById("numero")?.focus();
           } else {
-            setLogradouro('');
-            setBairro('');
-            setCidade('');
-            setUf('');
-            setAutoCompleted(false);
+            resetAddressFields();
           }
         })
         .catch((error) => {
           console.error(error);
-          setAutoCompleted(false);
+          resetAddressFields();
         });
     } else {
-      setAutoCompleted(false);
+      resetAddressFields();
     }
+  };
+  
+  const resetAddressFields = () => {
+    setLogradouro('');
+    setBairro('');
+    setCidade('');
+    setUf('');
+    setAutoCompleted(false);
   };
 
   const handleManualChange = () => {
@@ -65,7 +67,6 @@ const FormProvider = ({ children }: { children: ReactNode }) => {
     setNumero("");
     setComplemento("");
   };
-
 
   const validateNome = () => nome && nome.length >= 3 && nome.length <= 20;
   const validateCEP = () => cep && cep.replace(/\D/g, '').length === 8;
@@ -129,7 +130,6 @@ const FormProvider = ({ children }: { children: ReactNode }) => {
     return true;
   };
   
-
   const handleSubmit = () => {
     if (validateForm()) {
       const novoCadastro = {

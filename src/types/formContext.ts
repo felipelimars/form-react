@@ -37,11 +37,11 @@ export interface Cadastro {
     numero: string;
     complemento: string;
     autoCompleted: boolean;
-  }
+}
 
   export type CardLineProps = {
     id: string;
     nome: string;
     cep: string;
     autoCompleted: boolean;
-  };
+};
