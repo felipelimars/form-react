@@ -1,28 +1,39 @@
 import styled from "styled-components"
 
-export const Container = styled.form`
-height: 100vh;
-width: 100vw;
+export const Container = styled.section`
+min-height: 100vh;
+width: 100%;
+display: flex;
+align-items: center;
+flex-direction: column;
+background-color: #EFF2F5;
+`
+export const ContainerList = styled.div`
+display: flex;
+justify-content: space-between;
+width: 70vw;
+margin-top: 30vh;
+margin-bottom: 5vh;
+font-weight: bold;
+`;
+
+export const Name = styled.p`
+color: rgb(128, 129, 132);
+`;
+
+export const CEP = styled.p`
+color: rgb(128, 129, 132);
+`;
+
+export const New = styled.p`
+color: rgb(128, 129, 132);
+`;
+
+export const EmptyMessage = styled.p`
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: #ffff;
+margin-top: 50vh;
+color: rgb(128, 129, 132);
+font-weight: bold;
 `
-export const ContainerList = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Define três colunas de largura igual */
-  gap: 10px; /* Espaçamento entre as colunas */
-  padding: 20px; /* Espaçamento interno do container */
-`;
-
-export const Nome = styled.div`
-
-`;
-
-export const CEP = styled.div`
-
-`;
-
-export const Endereco = styled.div`
-
-`;
