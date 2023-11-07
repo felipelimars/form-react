@@ -59,10 +59,10 @@ cd api
 
 # executar o servidor
 npm start
-
+```
 Pronto! Agora os dois servidores estão em execução e você pode visualizar o projeto.
 Caso queira executar somente a API criada, você pode repetir o processo a cima e executar a API com o programa de sua preferencia. 
-```
+
 
 # Autor
 
