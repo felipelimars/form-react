@@ -55,7 +55,7 @@ const Form: React.FC = () => {
 
   return (
       <>
-        <Container >
+        <Container>
           <div>
             <InputStyle
               placeholder="Nome completo:"
@@ -148,7 +148,9 @@ const Form: React.FC = () => {
           </div>
         </Container>
         <ButtonContainer>
-          <ButtonSave onClick={onButtonSaveClick}>SALVAR</ButtonSave>
+          <ButtonSave onClick={onButtonSaveClick}>
+            SALVAR
+          </ButtonSave>
           <ButtonRegistered onClick={handleGoToListPage}>
             LISTAGEM
           </ButtonRegistered>

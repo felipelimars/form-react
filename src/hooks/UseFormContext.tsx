@@ -23,7 +23,6 @@ const FormProvider = ({ children }: { children: ReactNode }) => {
       axios.get(`http://localhost:3001/cep/${cepDigits}`)
         .then((response) => {
           const data = response.data;
-  
           if (!data.erro) {
             setLogradouro(data.logradouro);
             setBairro(data.bairro);
@@ -68,7 +67,7 @@ const FormProvider = ({ children }: { children: ReactNode }) => {
     setComplemento("");
   };
 
-  const validateNome = () => nome && nome.length >= 3 && nome.length <= 20;
+  const validateNome = () => nome && nome.length >= 3 && nome.length <= 40;
   const validateCEP = () => cep && cep.replace(/\D/g, '').length === 8;
   const validateUF = () => uf && uf.length === 2;
   const validateCidade = () => cidade && cidade.length <= 15;
@@ -76,6 +75,7 @@ const FormProvider = ({ children }: { children: ReactNode }) => {
   const validateBairro = () => bairro && bairro.length <= 20;
   const validateNumero = () => numero && !isNaN(Number(numero)) && numero.length <= 6;
   const validateComplemento = () => complemento && complemento.length <= 40;
+  
   const areAllFieldsEmpty = () => {
     return (
       !nome.trim() &&
@@ -91,40 +91,39 @@ const FormProvider = ({ children }: { children: ReactNode }) => {
   
   const validateForm = () => {
     if (areAllFieldsEmpty()) {
-      alert("Preencha todos os campos");
+      alert("Por favor, preencha todos os campos!");
       return false;
     }
-  
     if (!validateNome()) {
-      alert("Preencha o campo 'Nome' deve ter entre 3 e 30 caracteres.");
+      alert("Por favor preencha o campo 'Nome', deve ter entre 3 e 40 caracteres.");
       return false;
     }
     if (!validateCEP()) {
-      alert("Preencha o campo 'CEP', deve conter 8 dígitos numéricos.");
+      alert("Por favor preencha o campo 'CEP', deve conter 8 dígitos numéricos.");
       return false;
     }
     if (!validateUF()) {
-      alert("Preencha o campo 'UF', deve ter 2 caracteres.");
+      alert("Por favor preencha o campo 'UF', deve ter 2 caracteres.");
       return false;
     }
     if (!validateCidade()) {
-      alert("Preencha o campo 'Cidade', deve ter no máximo 15 caracteres.");
+      alert("Por favor preencha o campo 'Cidade', deve ter no máximo 15 caracteres.");
       return false;
     }
     if (!validateLogradouro()) {
-      alert("Preencha o campo 'Logradouro', deve ter no máximo 50 caracteres.");
+      alert("Por favor preencha o campo 'Logradouro', deve ter no máximo 50 caracteres.");
       return false;
     }
     if (!validateBairro()) {
-      alert("Preencha o campo 'Bairro', deve ter no máximo 20 caracteres.");
+      alert("Por favor preencha o campo 'Bairro', deve ter no máximo 20 caracteres.");
       return false;
     }
     if (!validateNumero()) {
-      alert("Preencha o campo 'Número', deve ser numérico e ter no máximo 6 dígitos.");
+      alert("Por favor preencha o campo 'Número', deve ser numérico e ter no máximo 6 dígitos.");
       return false;
     }
     if (!validateComplemento()) {
-      alert("Preencha o campo 'Complemento', deve ter no máximo 40 caracteres.");
+      alert("Por favor preencha o campo 'Complemento', deve ter no máximo 40 caracteres.");
       return false;
     }
     return true;
