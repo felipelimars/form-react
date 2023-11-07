@@ -8,6 +8,10 @@ const port = 3001;
 app.use(cors());
 app.use(express.json());
 
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});
+
 app.get('/cep/:cep', async (req, res) => {
   const { cep } = req.params;
   try {
@@ -16,8 +20,4 @@ app.get('/cep/:cep', async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: 'Erro ao buscar CEP', error: error.message });
   }
-});
-
-app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`);
 });
