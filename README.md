@@ -24,14 +24,15 @@ ele irá para uma página contendo a listagem de usuários e seus respectivos da
 
 
 ## Front-end
-
 - React 
 - Styled Components
 
 ## Back-end
 - Typescript
-- NodeJS
+- NodeJS 
 - ExpressJS
+
+* Criação da API
 
 
 # Como executar o projeto
