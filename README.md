@@ -10,10 +10,12 @@ ele irá para uma página contendo a listagem de usuários e seus respectivos da
 
 * Bonus: desenvolver uma API que encapsule o serviço da ViaCEP e faça a aplicação frontend bater nesta API para obter o endereço pelo CEP.
 
+[API desenvolvida para o projeto.](https://documenter.getpostman.com/view/28315812/2s9YXh536j)
+
+
 
 ## Layout web
 
-![video](https://github.com/felipelimars/form-react/blob/main/src/assets/4.mp4)
 ![Web 1](https://github.com/felipelimars/form-react/blob/main/src/assets/1.png)
 ![Web 2](https://github.com/felipelimars/form-react/blob/main/src/assets/2.png)
 
@@ -59,6 +61,7 @@ cd api
 npm start
 
 Pronto! Agora os dois servidores estão em execução e você pode visualizar o projeto.
+Caso queira executar somente a API criada, você pode repetir o processo a cima e executar a API com o programa de sua preferencia. 
 ```
 
 # Autor
