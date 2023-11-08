@@ -8,7 +8,7 @@ Esse projeto tem como base fundamentos do React. O objetivo é criar um formulá
 O formulário contém diversas validações de input como regras de negócio. Por fim, se tudo estiver certo e o usuário clicar no botão salvar,
 ele irá para uma página contendo a listagem de usuários e seus respectivos dados.
 
-* Bonus: desenvolver uma API que encapsule o serviço da ViaCEP e faça a aplicação frontend bater nesta API para obter o endereço pelo CEP.
+* Bonus: desenvolver uma API que encapsule o serviço da ViaCEP e fazer a aplicação frontend bater nesta API para obter o endereço pelo CEP.
 
 [API desenvolvida para o projeto.](https://documenter.getpostman.com/view/28315812/2s9YXh536j)
 
