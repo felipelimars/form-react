@@ -56,6 +56,11 @@ npm install
 # executar o projeto
 npm run dev
 
+# abrir novamente o terminal
+
+# mudar para pasta raiz
+cd my app
+
 # mudar para pasta api
 cd api
 
